@@ -2,7 +2,7 @@ import ShopActionTypes from "./shop.types";
 
 const INITIAL_STATE = {
   collections: null,
-  isFecthing: true,
+  isFecthing: false,
   errorMessage: undefined,
 };
 
@@ -11,22 +11,22 @@ const shopReducer = (state = INITIAL_STATE, action) => {
     case ShopActionTypes.FETCH_COLLECTIONS_START:
       return {
         ...state,
-        isFecthing: true,
+        isFecthing: false,
       };
     case ShopActionTypes.FETCH_COLLECTIONS_SUCCESS:
       return {
         ...state,
-        isFecthing: false,
+        isFecthing: true,
         collections: action.payload,
       };
     case ShopActionTypes.FETCH_COLLECTIONS_FAILURE:
       return {
         ...state,
-        isFecthing: false,
+        isFecthing: true,
         errorMessage: action.payload,
       };
     default:
-      return INITIAL_STATE;
+      return state;
   }
 };
 

@@ -1,3 +1,8 @@
 {
-  "cSpell.ignoreWords": ["Fecthing", "consturctor", "firestore"]
+  "cSpell.ignoreWords": [
+		"Fecthing",
+		"consturctor",
+		"firestore",
+		"persistor"
+	]
 }
