@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import express from "express";
 import dotenv from "dotenv";
 import Stripe from "stripe";
+import compression from 'compression';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,6 +16,7 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const port = process.env.PORT || 5000;
 
+app.use(compression());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
